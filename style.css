@@ -37,8 +37,23 @@ html li {
   font-size: 1.4rem;
 }
 
+/*Button*/
+button.read-more {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 2px solid var(--fontSubDarkMode);
+  color: var(--fontSubDarkMode);
+  background-color: transparent;
+  font-weight: 900;
+}
+
+button.read-more:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
 /*【Transition】 step by step --0.3s all */
-header.main .main-nav .link a::after, .section-side .tags .tag.active::before, .section-side .tags .tag:hover::before, .section-side .footer .back:hover, .section-news .news:hover::before, .section-team-member .members .member .member-pic img, .section-team-member .members .member:hover .member-pic img, .section-team-member-detail .member-papers .paper:hover .paper-title p, .section-team-member-detail .member-papers .paper:hover .paper-remark p, .section-publications .papers .paper:hover .paper-title p, .section-publications .papers .paper:hover .paper-remark p {
+button.read-more:hover, header.main .main-nav .link a::after, .section-side .tags .tag.active::before, .section-side .tags .tag:hover::before, .section-side .footer .back:hover, .section-news .news:hover::before, .section-team-member .members .member .member-pic img, .section-team-member .members .member:hover .member-pic img, .section-team-member-detail .member-papers .paper:hover .paper-title p, .section-team-member-detail .member-papers .paper:hover .paper-remark p, .section-publications .papers .paper:hover .paper-title p, .section-publications .papers .paper:hover .paper-remark p {
   -webkit-transition: 0.3s all linear;
   transition: 0.3s all linear;
 }
@@ -73,7 +88,6 @@ main {
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  overflow-y: scroll;
   padding-top: 80px;
 }
 
@@ -101,6 +115,12 @@ header.main {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+header.main.transparent {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
 }
 
 header.main .container {
@@ -174,6 +194,11 @@ header.main .main-nav .link.link {
 @media (max-width: 900px) {
   header.main.active {
     height: 100%;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
   }
   header.main.active .main-nav {
     display: -webkit-box;
@@ -549,9 +574,215 @@ header.main .main-nav .link.link {
 /*--【section-side】*/
 /*【Index】*/
 .section-index {
-  height: 100%;
+  margin-top: -80px;
+  height: calc(100% + 80px);
   width: 100%;
   overflow: hidden;
+}
+
+.section-index .about {
+  height: 100%;
+  position: relative;
+}
+
+.section-index .about .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-index .about .about-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.section-index .about .about-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.section-index .about .about-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(black), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to top, black, rgba(0, 0, 0, 0));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 20px;
+  min-height: 200px;
+}
+
+.section-index .about .about-info .name {
+  width: 40%;
+  padding-left: 15px;
+}
+
+.section-index .about .about-info .name h2 {
+  display: block;
+  border-bottom: 5px solid var(--mainColor);
+  color: white;
+  font-size: 10vw;
+  width: 100%;
+}
+
+.section-index .about .about-info .name span {
+  color: white;
+  font-size: 5vw;
+}
+
+.section-index .about .about-info .about-expertises {
+  width: calc( 50% - 15px);
+  margin-left: 10%;
+}
+
+.section-index .about .about-info .about-expertises .expertises {
+  padding: 5px 0px;
+  overflow: hidden;
+}
+
+.section-index .about .about-info .about-expertises .expertises .tw, .section-index .about .about-info .about-expertises .expertises .en {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.section-index .about .about-info .about-expertises .expertises .tw {
+  font-weight: 1.2rem;
+  color: var(--fontDarkMode);
+}
+
+.section-index .about .about-info .about-expertises .expertises .en {
+  font-weight: 1rem;
+  font-weight: 500;
+  color: var(--fontSubDarkMode);
+}
+
+.section-index .btns {
+  width: 100%;
+  padding: 15px 15px 25px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-index .news {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section-index .news img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+
+.section-index .news .news-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(black), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to top, black, rgba(0, 0, 0, 0));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 20px;
+  min-height: 200px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.section-index .news .news-info .news-title {
+  padding: 0px 15px;
+}
+
+.section-index .news .news-info .news-title .main {
+  font-size: 2rem;
+  display: inline-block;
+  border-bottom: 2px solid #ff0000;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  color: var(--fontDarkMode);
+}
+
+.section-index .news .news-info .news-title .sub {
+  font-size: 1.6rem;
+  color: var(--fontSubDarkMode);
+}
+
+@media (min-width: 900px) {
+  .section-index .about {
+    background-color: var(--bgcDarkColor);
+  }
+  .section-index .about .about-info {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .section-index .about .about-info .name {
+    width: 100%;
+    padding-left: 0;
+  }
+  .section-index .about .about-info .name h2 {
+    font-size: 4rem;
+    display: inline-block;
+    width: auto;
+  }
+  .section-index .about .about-info .name span {
+    font-size: 2rem;
+    display: block;
+  }
+  .section-index .about .about-info .about-expertises {
+    width: 100%;
+    margin-left: 0;
+  }
+  .section-index .news .news-info .news-title .main {
+    font-size: 4rem;
+  }
+  .section-index .news .news-info .news-title .sub {
+    font-size: 2rem;
+  }
 }
 
 /*【Index】*/

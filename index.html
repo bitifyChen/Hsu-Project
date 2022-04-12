@@ -8,14 +8,57 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            /* Center slide text vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-pagination {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 4px;
+            border-radius: 0;
+            background-color: rgb(255, 255, 255);
+            opacity: .5;
+            transition: 0.3s all linear;
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 30px;
+            background-color: var(--mainColor);
+            opacity: 1;
+            transition: 0.3s all linear;
+        }
+
+        @media (min-width: 900px) {
+            .swiper-pagination {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <header class="main">
+    <header class="main transparent">
         <div class="container">
             <a class="logo" href="index.html">
                 <h1 class="sr-only">徐之昇</h1>
-                <img src="https://placeholder.pics/svg/150x50/888888/EEE/Logo" alt="..." height="36">
+                <img src="img/logo.svg" alt="..." height="80">
             </a>
             <button class="menu">
 
@@ -38,13 +81,116 @@
             </nav>
         </div>
     </header>
-    
+
     <main>
         <section class="section-index">
-           
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide about">
+                        <div class="container">
+                            <div class="about-img">
+                                <img src="img/user.png" alt="">
+                            </div>
+                            <div class="about-info">
+                                <div class="name">
+                                    <h2>徐 之昇</h2>
+                                    <span class="en">Jason C. Hsu</span>
+                                </div>
+                                <ul class="about-expertises">
+                                    <li class="expertises">
+                                        <p class="tw">臨床數據分析</p>
+                                        <p class="en">Clinical Data Analysis</p>
+                                    </li>
+                                    <li class="expertises">
+                                        <p class="tw">精準藥物治療</p>
+                                        <p class="en">Precision Pharmacotherapy</p>
+                                    </li>
+                                    <li class="expertises">
+                                        <p class="tw">生技醫療管理</p>
+                                        <p class="en">Biotech and Healthcare Management</p>
+                                    </li>
+                                </ul>
+                                <div class="btns">
+                                    <a href="about.html">
+                                        <button class="read-more">關於我</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide news">
+                        <img src="https://img.lovepik.com/background/20211022/large/lovepik-future-sense-technology-background-image_401959704.jpg"
+                            alt="">
+                        <div class="news-info">
+                            <div class="news-title">
+                                <p class="main">臨床數據分析</p>
+                                <p class="sub">Clinical Data Analysis</p>
+                            </div>
+                            <div class="btns">
+                                <a href="about.html">
+                                    <button class="read-more">閱讀更多</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide news">
+                        <img src="https://tmu.pure.elsevier.com/files-asset/35075736/Jason_Hsu.jpg/" alt="">
+                        <div class="news-info">
+                            <div class="news-title">
+                                <p class="main">【校園生醫大師】徐之昇：「飛高、看遠、下大棋」前瞻思維</p>
+                                <p class="sub">藥學+大數據+公共政策 超前部署 </p>
+                            </div>
+                            <div class="btns">
+                                <a href="https://news.gbimonthly.com/tw/magazine/article_show.php?num=36558">
+                                    <button class="read-more">閱讀更多</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide news">
+                        <img src="https://www.china-motor.com.tw/cmwspublished/layout4/innerBanner_award_mobile.jpg"
+                            alt="">
+                        <div class="news-info">
+                            <div class="news-title">
+                                <p class="main">賀!本實驗室陳品宏同學，論文獲得最佳殊榮獎</p>
+                                <p class="sub"> 榮獲 Intelligent Computing and Its Emerging Applications (ICEA), 2019
+                                    (Best Paper Award)</p>
+                            </div>
+                            <div class="btns">
+                                <a href="about.html">
+                                    <button class="read-more">閱讀更多</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </section>
     </main>
     <script src="main.js"></script>
+    <!-- swiper -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "fade",
+            // effect: "coverflow",
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            speed: 500,
+            // autoplay: {
+            //     delay: 5000, // 3秒切換一次
+            //     stopOnLastSlide: false,
+            //     disableOnInteraction: true,
+            // },
+        });
+    </script>
 </body>
 
 </html>
