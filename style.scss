@@ -63,12 +63,12 @@ button.read-more{
     color: var(--fontSubDarkMode);
   }
 }
-
 body {
   background-color: var(--bgcDarkColor);
 }
 main {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   overflow-x: hidden;
   padding-top: 80px;
@@ -88,7 +88,7 @@ main {
 }
 /*【Header】 --mobile H80 */
 header.main {
-  padding: 5px 0px;
+  padding: 15px 0px;
   position: absolute;
   z-index: 99;
   left: 0;
@@ -106,18 +106,16 @@ header.main {
   }
   .logo img {
     height: 50px;
-    vertical-align: bottom;
   }
 
   button.menu {
     margin-left: auto;
-    height: 40px;
-    width: 40px;
-    border-radius: 40px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
     cursor: pointer;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    right: 15px;
     border: none;
   }
 
@@ -161,7 +159,6 @@ header.main {
     }
   }
   @media (max-width: 900px) {
-
     &.active {
       height: 100%;
       backdrop-filter: blur(5px);
@@ -172,12 +169,12 @@ header.main {
         justify-content: center;
         align-items: center;
         height: 100%;
+        margin-top: -80px;
       }
     }
   }
 
   @media (min-width: 900px) {
-    padding: 15px 0px;
     .container {
       flex-direction: row;
     }
@@ -352,14 +349,13 @@ header.main {
     bottom: 0;
     left: 0;
     right: 0;
-    background:linear-gradient(to top,black,rgba(0,0,0,0));
+    background-color: var(--bgcDarkColor);
     padding: 10px;
     .leave {
       display: flex;
       justify-content: flex-end;
     }
     .back {
-      font-size: 18px;
       padding: 5px 10px;
       color: var(--bgcDarkColor);
       font-weight: 900;
@@ -595,59 +591,49 @@ header.main {
 @media (min-width: 900px) {
   .section-index{
     .about{
+      background-color:var(--bgcDarkColor) ;
+
       .about-info {
-        background:transparent;
-        left: 10%;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: flex-end;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: none;
+        flex-direction: column;
         .name{
-          width: auto;
+          width: 100%;
+          padding-left: 0;
           h2{
-            width: 8vw;
-            font-size: 8vw;
-            border-bottom:2px solid var(--mainColor);
-            padding-bottom: 2px;
-            margin-bottom: 2px;
+            font-size: 4rem;
+            display: inline-block;
+            width: auto;
           }
           span{
-            font-size: 3vw;
+            font-size: 2rem;
+            display: block;
           }
         }
         .about-expertises{
-          width: auto;
-          margin-left: -9vw;
-          margin-bottom: 4vw;
-          .expertises{
-            background-color: white;
-            padding:5px 10px;
-            margin: 5px 0px;
-            .tw{
-              color:var(--bgcDarkContentColor);
-              font-weight: 700;
-            }
-            .en{
-              color:var(--bgcDarkColor);
-            }
-          }
+          width: 100%;
+          margin-left: 0;
         }
-      }
-      .read-more{
-        border:2px solid var(--bgcDarkColor) ;
-        color: var(--bgcDarkColor);
-        width: 8vw;
       }
     }
     .news{
       .news-info {
+        top: 0;
+        justify-content:center;
         .news-title {
+            margin-left: 10%;
+            width: 40%;
           .main{
-            font-size: 4rem;
+            font-size: 3rem;
           }
           .sub{
-            font-size: 2rem;
+            font-size: 1.8rem;
           }
+        }
+        .btns{
+            margin-left: 10%;
         }
       }
 
