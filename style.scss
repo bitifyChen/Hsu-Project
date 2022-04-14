@@ -65,6 +65,7 @@ button.read-more{
 }
 body {
   background-color: var(--bgcDarkColor);
+  overflow-x: hidden;
 }
 main {
   height: 100vh;
@@ -88,7 +89,7 @@ main {
 }
 /*【Header】 --mobile H80 */
 header.main {
-  padding: 15px 0px;
+  padding: 5px 0px;
   position: absolute;
   z-index: 99;
   left: 0;
@@ -106,16 +107,18 @@ header.main {
   }
   .logo img {
     height: 50px;
+    vertical-align: bottom;
   }
 
   button.menu {
     margin-left: auto;
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
     cursor: pointer;
     position: absolute;
-    right: 15px;
+    top: 10px;
+    right: 10px;
     border: none;
   }
 
@@ -159,6 +162,7 @@ header.main {
     }
   }
   @media (max-width: 900px) {
+
     &.active {
       height: 100%;
       backdrop-filter: blur(5px);
@@ -169,14 +173,15 @@ header.main {
         justify-content: center;
         align-items: center;
         height: 100%;
-        margin-top: -80px;
       }
     }
   }
 
   @media (min-width: 900px) {
+    padding: 0px 0px;
     .container {
       flex-direction: row;
+      align-items: center;
     }
     button.menu {
       display: none;
@@ -192,6 +197,7 @@ header.main {
       }
       .link {
         margin-left: 20px;
+        padding: 25px 0px;
         span {
           margin-left: 5px;
         }
@@ -209,6 +215,15 @@ header.main {
     transform: translate(-40px, -60px);
     filter: blur(5px);
     z-index: -1;
+    transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &.moving{
+      width: 100px;
+      height: 100px;
+      transform: translate(var(--move),-10px);
+      transition: all .8s cubic-bezier(0.16, 1, 0.3, 1);
+
+    }
   }
 }
 /*【Header】 --mobile H80 */
@@ -349,13 +364,14 @@ header.main {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var(--bgcDarkColor);
+    background:linear-gradient(to top,black,rgba(0,0,0,0));
     padding: 10px;
     .leave {
       display: flex;
       justify-content: flex-end;
     }
     .back {
+      font-size: 18px;
       padding: 5px 10px;
       color: var(--bgcDarkColor);
       font-weight: 900;
@@ -396,11 +412,11 @@ header.main {
         &::after {
           content: "";
           position: absolute;
-          left: 0;
+          right:40px;
           top: 45px;
-          width: 900px;
+          width: 500px;
           height: 5px;
-          background-color: red;
+          background-color: var(--mainColor);
         }
         h2 {
           position: absolute;
@@ -409,7 +425,7 @@ header.main {
           right: 0;
           font-weight: 500;
           padding-left: 10px;
-          padding-right: 40px;
+          margin-right: 40px;
           font-size: 50px;
           white-space: nowrap;
           overflow: hidden;
@@ -591,31 +607,49 @@ header.main {
 @media (min-width: 900px) {
   .section-index{
     .about{
-      background-color:var(--bgcDarkColor) ;
-
+      
       .about-info {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        background: none;
-        flex-direction: column;
+        background:transparent;
+        left: 10%;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: flex-end;
         .name{
-          width: 100%;
-          padding-left: 0;
+          width: auto;
           h2{
-            font-size: 4rem;
-            display: inline-block;
-            width: auto;
+            width: 8vw;
+            font-size: 8vw;
+            border-bottom:2px solid var(--mainColor);
+            padding-bottom: 2px;
+            margin-bottom: 2px;
           }
           span{
-            font-size: 2rem;
-            display: block;
+            font-size: 3vw;
           }
         }
         .about-expertises{
-          width: 100%;
-          margin-left: 0;
+          width: auto;
+          margin-left: -9vw;
+          margin-bottom: 4vw;
+          .expertises{
+            background-color: white;
+            padding:5px 10px;
+            margin: 5px 0px;
+            .tw{
+              color:var(--bgcDarkContentColor);
+              font-weight: 700;
+            }
+            .en{
+              color:var(--bgcDarkColor);
+            }
+          }
         }
+      }
+      .read-more{
+        border:2px solid var(--bgcDarkColor) ;
+        color: var(--bgcDarkColor);
+        width: 8vw;
       }
     }
     .news{
