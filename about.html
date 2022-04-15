@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="dist/aos/aos.css" />
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -44,11 +45,11 @@
     <main>
         <section class="section-about">
             <div class="container">
-                <div class="title">
+                <div class="title"  data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
                     <h2>關於 <span>About</span></h2>
                 </div>
                 <div class="content">
-                    <div class="main">
+                    <div class="main" data-aos="fade-right" data-aos-delay="500" data-aos-duration="800">
                         <div class="photo">
                             <img src="img/user.png" alt="">
                         </div>
@@ -65,7 +66,7 @@
                             </div>
                         </div>
 
-                        <div class="txt-group">
+                        <div class="txt-group" >
                             <div class="txt-title">
                                 <h3>信箱 Email</h3>
                             </div>
@@ -101,7 +102,7 @@
 
                     </div>
                     <div class="other">
-                        <div class="name-group display-md">
+                        <div class="name-group display-md" data-aos="fade-left" data-aos-delay="0" data-aos-duration="800">
                             <div class="name-title">
                                 <h3>
                                     徐 之昇<span>Jason C. Hsu</span>
@@ -112,7 +113,7 @@
                                 <p class="en">International Ph.D. Program in Biotech and Healthcare Management</p>
                             </div>
                         </div>
-                        <div class="txt-group">
+                        <div class="txt-group" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
                             <div class="txt-title">
                                 <h3>現職 Incumbent</h3>
                             </div>
@@ -129,7 +130,7 @@
                             </ul>
                         </div>
 
-                        <div class="txt-group">
+                        <div class="txt-group" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
                             <div class="txt-title">
                                 <h3>專長 Expertise</h3>
                             </div>
@@ -149,7 +150,7 @@
                             </ul>
                         </div>
 
-                        <div class="txt-group">
+                        <div class="txt-group" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
                             <div class="txt-title">
                                 <h3>授課領域 Teaching Field</h3>
                             </div>
@@ -169,7 +170,7 @@
                             </ul>
                         </div>
 
-                        <div class="txt-group">
+                        <div class="txt-group" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
                             <div class="txt-title">
                                 <h3>學歷 Education</h3>
                             </div>
@@ -190,7 +191,7 @@
                             </ul>
                         </div>
 
-                        <div class="txt-group">
+                        <div class="txt-group" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
                             <div class="txt-title">
                                 <h3>經歷 Experience</h3>
                             </div>
@@ -232,6 +233,10 @@
             </div>
         </section>
     </main>
+    <script src="dist/aos/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="main.js"></script>
 </body>
 

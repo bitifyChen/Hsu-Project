@@ -7,15 +7,18 @@ btnMenu.addEventListener('click',menuOpen)
 const navBar = document.querySelector('.main-nav .links')
 const navLinks = document.querySelectorAll('.main-nav .link')
 const dot = document.querySelector('.dot')
-navBar.addEventListener("mouseover", () =>{ dot.classList.add('moving');})
-navBar.addEventListener("mouseout", () =>{ dot.classList.remove('moving');})
-navLinks.forEach((link) =>{ 
-  link.addEventListener("mouseover", () =>
-  { 
-    dot.classList.add('moving');
-    dot.style.setProperty('--move', link.offsetLeft - dot.offsetLeft + 'px');
-  });
-})
+if (dot) { 
+  navBar.addEventListener("mouseover", () =>{ dot.classList.add('moving');})
+  navBar.addEventListener("mouseout", () =>{ dot.classList.remove('moving');})
+  navLinks.forEach((link) =>{ 
+    link.addEventListener("mouseover", () =>
+    { 
+      dot.classList.add('moving');
+      dot.style.setProperty('--move', link.offsetLeft - dot.offsetLeft + 'px');
+    });
+  })
+  
+}
 
 
 

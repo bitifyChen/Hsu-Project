@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="dist/aos/aos.css" />
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -45,7 +45,7 @@
     <main>
         <section class="section-news-detail section-side">
             <div class="container">
-                <div class="side">
+                <div class="side" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                     <div class="title">
                         <h2>最新消息<span>News</span></h2>
                     </div>
@@ -57,7 +57,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="content">
+                <div class="content" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">s
                     <div class="news">
                         <div class="news-title">
                             <h3>兩岸醫療器材監管規範及全球趨勢展望 參加CIMDR 2021大會心得分享</h3>
@@ -112,6 +112,10 @@
             </div>
         </section>
     </main>
+    <script src="dist/aos/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="main.js"></script>
 </body>
 

@@ -65,13 +65,26 @@ button.read-more{
 }
 body {
   background-color: var(--bgcDarkColor);
+  // overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 80px 0 5px 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: var(--subColor);
+  }
   overflow-x: hidden;
 }
 main {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   width: 100%;
-  overflow-x: hidden;
   padding-top: 80px;
   &::-webkit-scrollbar {
     width: 5px;
@@ -90,7 +103,7 @@ main {
 /*【Header】 --mobile H80 */
 header.main {
   padding: 5px 0px;
-  position: absolute;
+  position: fixed;
   z-index: 99;
   left: 0;
   right: 0;
@@ -216,7 +229,7 @@ header.main {
     filter: blur(5px);
     z-index: -1;
     transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
-
+    animation: mask 5s linear infinite;
     &.moving{
       width: 100px;
       height: 100px;
@@ -1136,3 +1149,16 @@ header.main {
 /*【CSS import】*/
 /*【Font-Awesome】*/
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+
+/* Animation */
+@keyframes mask {
+  0% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+  50% {
+    border-radius: 49% 51% 50% 50% / 54% 39% 61% 46%;
+  }
+  to {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+}
