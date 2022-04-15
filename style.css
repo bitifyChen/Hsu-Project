@@ -420,6 +420,7 @@ header.main .main-nav .link.link {
 }
 
 .section-side .content {
+  overflow-x: hidden;
   margin-bottom: 60px;
 }
 
@@ -891,6 +892,10 @@ header.main .main-nav .link.link {
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
+}
+
+.section-about .other {
+  overflow-x: hidden;
 }
 
 .section-about .name-group {

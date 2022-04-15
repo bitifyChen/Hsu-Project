@@ -63,9 +63,10 @@ button.read-more{
     color: var(--fontSubDarkMode);
   }
 }
+
 body {
   background-color: var(--bgcDarkColor);
-  // overflow-x: hidden;
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     width: 5px;
   }
@@ -79,7 +80,6 @@ body {
     border-radius: 4px;
     background: var(--subColor);
   }
-  overflow-x: hidden;
 }
 main {
   height: 100vh;
@@ -329,6 +329,7 @@ header.main {
     }
   }
   .content {
+    overflow-x: hidden;
     margin-bottom: 60px;
   }
   .tags {
@@ -722,6 +723,9 @@ header.main {
       object-fit: cover;
       object-position: top;
     }
+  }
+  .other{
+      overflow-x: hidden;
   }
   .name-group {
     padding: 20px 0px;
