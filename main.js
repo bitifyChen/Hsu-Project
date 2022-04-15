@@ -1,14 +1,22 @@
 /*Nav-mobile*/
 const btnMenu = document.querySelector('header.main button.menu')
 const menu = document.querySelector('header.main')
+const navLinks = document.querySelectorAll('.main-nav .link')
 btnMenu.addEventListener('click', menuOpen)
 function menuOpen(){
   menu.classList.toggle('active')
 }
+/*--點擊link後，清除active效果，防止返回時看到*/
+navLinks.forEach((link) =>
+{ 
+  link.addEventListener('click', () =>
+  { 
+    menu.classList.remove('active')
+  })
+})
 
 /*Nav-desktop-紅球跟隨效果*/
 const navBar = document.querySelector('.main-nav .links')
-const navLinks = document.querySelectorAll('.main-nav .link')
 const dot = document.querySelector('.dot')
 if (dot) { 
   navBar.addEventListener("mouseover", () =>{ dot.classList.add('moving');})
