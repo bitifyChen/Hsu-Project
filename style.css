@@ -53,7 +53,7 @@ button.read-more:hover {
 }
 
 /*【Transition】 step by step --0.3s all */
-button.read-more:hover, header.main .main-nav .link a::after, .section-side .tags .tag.active::before, .section-side .tags .tag:hover::before, .section-side .footer .back:hover, .section-news .news:hover::before, .section-team-member .members .member .member-pic img, .section-team-member .members .member:hover .member-pic img, .section-team-member-detail .member-papers .paper:hover .paper-title p, .section-team-member-detail .member-papers .paper:hover .paper-remark p, .section-publications .papers .paper:hover .paper-title p, .section-publications .papers .paper:hover .paper-remark p {
+button.read-more:hover, header.main button.menu::before, header.main button.menu::after, .section-side .tags .tag.active::before, .section-side .tags .tag:hover::before, .section-side .footer .back:hover, .section-news .news:hover::before, .section-team-member .members .member .member-pic img, .section-team-member .members .member:hover .member-pic img, .section-team-member-detail .member-papers .paper:hover .paper-title p, .section-team-member-detail .member-papers .paper:hover .paper-remark p, .section-publications .papers .paper:hover .paper-title p, .section-publications .papers .paper:hover .paper-remark p {
   -webkit-transition: 0.3s all linear;
   transition: 0.3s all linear;
 }
@@ -164,6 +164,40 @@ header.main button.menu {
   top: 10px;
   right: 10px;
   border: none;
+  background: transparent;
+}
+
+header.main button.menu::before, header.main button.menu::after {
+  content: '';
+  width: 28px;
+  height: 4px;
+  background-color: var(--fontDarkMode);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+header.main button.menu::before {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+header.main button.menu::after {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+header.main.active button.menu::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header.main.active button.menu::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 header.main .main-nav {
@@ -178,30 +212,10 @@ header.main .main-nav .link {
   cursor: pointer;
 }
 
-header.main .main-nav .link a {
-  position: relative;
-}
-
-header.main .main-nav .link a::after {
-  content: "";
-  position: absolute;
-  height: 5px;
-  width: 0%;
-  background-color: var(--mainColor);
-  bottom: -5px;
-  left: 0;
-}
-
 header.main .main-nav .link span {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   margin-left: 0.5em;
-}
-
-@media (max-width: 768px) {
-  header.main .main-nav .link:hover a::after, header.main .main-nav .link.active a::after {
-    width: 100%;
-  }
 }
 
 header.main .main-nav .link.link {
@@ -441,7 +455,7 @@ header.main .main-nav .link.link {
 }
 
 .section-side .tags .tag {
-  width: 200px;
+  width: 150px;
   padding: 10px 20px;
   background-color: black;
   position: relative;
@@ -543,7 +557,6 @@ header.main .main-nav .link.link {
     position: absolute;
     right: 40px;
     top: 45px;
-    width: 500px;
     height: 5px;
     background-color: var(--mainColor);
   }
@@ -990,6 +1003,22 @@ header.main .main-nav .link.link {
   border-top: 1px solid var(--fontSubDarkMode);
 }
 
+@media (min-width: 900px) {
+  .section-news .news {
+    min-height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 /*【NEWS】*/
 /*【NEWS-Deatil】*/
 @media (max-width: 900px) {
@@ -1314,7 +1343,7 @@ header.main .main-nav .link.link {
 }
 
 .section-publications .papers .paper {
-  padding: 10px 0px;
+  padding: 20px 0px;
   position: relative;
   cursor: pointer;
 }
@@ -1342,6 +1371,17 @@ header.main .main-nav .link.link {
   .section-publications .papers .paper {
     padding: 20px 0px;
     padding-left: 10px;
+    min-height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .section-publications .papers .paper .paper-title p {
     font-size: 2rem;

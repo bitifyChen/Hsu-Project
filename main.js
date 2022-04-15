@@ -1,9 +1,12 @@
 /*Nav-mobile*/
 const btnMenu = document.querySelector('header.main button.menu')
 const menu = document.querySelector('header.main')
-btnMenu.addEventListener('click',menuOpen)
+btnMenu.addEventListener('click', menuOpen)
+function menuOpen(){
+  menu.classList.toggle('active')
+}
 
-/*Nav-desktop*/
+/*Nav-desktop-紅球跟隨效果*/
 const navBar = document.querySelector('.main-nav .links')
 const navLinks = document.querySelectorAll('.main-nav .link')
 const dot = document.querySelector('.dot')
@@ -20,14 +23,20 @@ if (dot) {
   
 }
 
-
-
-
-function menuOpen(){
-  menu.classList.toggle('active')
+/*Back to Previous Page 返回上一頁*/
+const btnBack = document.querySelectorAll('.leave button.back')
+if (btnBack) { 
+  btnBack.forEach((btn) =>
+  { 
+    btn.addEventListener('click',backToPrevious)
+  })
+}
+function backToPrevious()
+{ 
+  window.history.back();
 }
 
-/*Safari*/
+/*Safari-100VH問題*/
 function safariHacks() {
   let windowsVH = window.innerHeight / 100;
   document.querySelector('main').style.setProperty('--vh', windowsVH + 'px');

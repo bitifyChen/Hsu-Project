@@ -133,8 +133,37 @@ header.main {
     top: 10px;
     right: 10px;
     border: none;
+    background:transparent;
+    &::before,&::after{
+      content: '';
+      width: 28px;
+      height: 4px;
+      background-color: var(--fontDarkMode);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      @extend %sbs;
+    }
+    &::before{
+      transform:translateY(-5px);
+    }
+    &::after{
+      transform:translateY(5px);
+    }
   }
-
+  &.active{
+    button.menu {
+      &::before{
+        transform: rotate(45deg);
+      }
+      &::after{
+        transform: rotate(-45deg);
+      }
+    }
+  }
   .main-nav {
     display: none;
     .link {
@@ -143,31 +172,10 @@ header.main {
       letter-spacing: 0.1em;
       padding: 10px 0px;
       cursor: pointer;
-      a {
-        position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          height: 5px;
-          width: 0%;
-          background-color: var(--mainColor);
-          bottom: -5px;
-          left: 0;
-          @extend %sbs;
-        }
-      }
       span {
         font-family: "Roboto", sans-serif;
         font-weight: 500;
         margin-left: 0.5em;
-      }
-      @media (max-width: 768px) {
-        &:hover,
-        &.active {
-          a::after {
-            width: 100%;
-          }
-        }
       }
       &.link {
         position: relative;
@@ -175,7 +183,6 @@ header.main {
     }
   }
   @media (max-width: 900px) {
-
     &.active {
       height: 100%;
       backdrop-filter: blur(5px);
@@ -344,7 +351,7 @@ header.main {
       margin-left: 10px;
     }
     .tag {
-      width: 200px;
+      width: 150px;
       padding: 10px 20px;
       background-color: black;
       position: relative;
@@ -428,7 +435,6 @@ header.main {
           position: absolute;
           right:40px;
           top: 45px;
-          width: 500px;
           height: 5px;
           background-color: var(--mainColor);
         }
@@ -811,7 +817,16 @@ header.main {
     border-top: 1px solid var(--fontSubDarkMode);
   }
 }
-
+@media (min-width: 900px) {
+  .section-news{
+    .news{
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
 /*【NEWS】*/
 /*【NEWS-Deatil】*/
 .section-news-detail {
@@ -1090,7 +1105,7 @@ header.main {
       border-top: 1px solid var(--fontSubDarkMode);
     }
     .paper{
-      padding: 10px 0px;
+      padding: 20px 0px;
       position: relative;
       cursor: pointer;
       .paper-title p{
@@ -1121,6 +1136,10 @@ header.main {
       .paper{
         padding: 20px 0px;
         padding-left: 10px;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .paper-title p{
           font-size: 2rem;
           color: var(--fontDarkMode);
