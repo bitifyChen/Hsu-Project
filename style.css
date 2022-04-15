@@ -951,7 +951,7 @@ header.main .main-nav .link.link {
         align-self: flex-start;
     position: -webkit-sticky;
     position: sticky;
-    top: 10px;
+    top: 80px;
     left: 0;
   }
   .section-about .other {
