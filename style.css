@@ -380,7 +380,6 @@ header.main .main-nav .link.link {
 .ckeditor {
   font-size: 1rem;
   color: var(--fontSubDarkMode);
-  line-height: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,6 +388,10 @@ header.main .main-nav .link.link {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow-wrap: break-word;
+}
+
+.ckeditor * {
+  line-height: 1.6em;
 }
 
 .ckeditor p {
@@ -416,7 +419,8 @@ header.main .main-nav .link.link {
 
 .ckeditor ol, .ckeditor ul {
   list-style-type: disc;
-  list-style-position: inside;
+  list-style-position: outside;
+  padding-left: 2em;
 }
 
 /*--【ckeditor】*/
