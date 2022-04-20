@@ -172,7 +172,7 @@ header.main button.menu {
 }
 
 header.main button.menu::before, header.main button.menu::after {
-  content: '';
+  content: "";
   width: 28px;
   height: 4px;
   background-color: var(--fontDarkMode);
@@ -232,8 +232,8 @@ header.main .main-nav .link.link {
     -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.5);
-    -webkit-transition: all .3s linear;
-    transition: all .3s linear;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
   }
   header.main.active .main-nav {
     display: -webkit-box;
@@ -303,7 +303,7 @@ header.main .main-nav .link.link {
     height: 200px;
     border-radius: 200px;
     background-color: var(--mainColor);
-    position: absolute;
+    position: fixed;
     -webkit-transform: translate(-40px, -60px);
             transform: translate(-40px, -60px);
     -webkit-filter: blur(5px);
@@ -311,8 +311,8 @@ header.main .main-nav .link.link {
     z-index: -1;
     -webkit-transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
     transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
-    -webkit-animation: mask 5s linear infinite,show 1s linear forwards;
-            animation: mask 5s linear infinite,show 1s linear forwards;
+    -webkit-animation: mask 5s linear infinite, show 1s linear forwards;
+            animation: mask 5s linear infinite, show 1s linear forwards;
   }
   .dot.moving {
     width: 100px;
@@ -421,11 +421,13 @@ header.main .main-nav .link.link {
   border-collapse: collapse;
 }
 
-.ckeditor table th, .ckeditor table td {
+.ckeditor table th,
+.ckeditor table td {
   border: 2px solid;
 }
 
-.ckeditor ol, .ckeditor ul {
+.ckeditor ol,
+.ckeditor ul {
   list-style-type: disc;
   list-style-position: outside;
   padding-left: 2em;
@@ -727,7 +729,7 @@ header.main .main-nav .link.link {
 }
 
 .section-index .about .about-info .about-expertises {
-  width: calc( 50% - 15px);
+  width: calc(50% - 15px);
   margin-left: 10%;
 }
 
@@ -736,7 +738,8 @@ header.main .main-nav .link.link {
   overflow: hidden;
 }
 
-.section-index .about .about-info .about-expertises .expertises .tw, .section-index .about .about-info .about-expertises .expertises .en {
+.section-index .about .about-info .about-expertises .expertises .tw,
+.section-index .about .about-info .about-expertises .expertises .en {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
@@ -896,6 +899,7 @@ header.main .main-nav .link.link {
 /*【About】*/
 .section-about {
   padding: 50px 0px;
+  height: 100%;
 }
 
 .section-about .title {
@@ -1338,8 +1342,8 @@ header.main .main-nav .link.link {
   }
   .section-team-member-detail .content .member-papers .paper:hover::before {
     opacity: 1;
-    -webkit-transition: all .3s linear;
-    transition: all .3s linear;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
   }
 }
 
@@ -1431,8 +1435,8 @@ header.main .main-nav .link.link {
   }
   .section-publications .papers .paper:hover::before {
     opacity: 1;
-    -webkit-transition: all .3s linear;
-    transition: all .3s linear;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
   }
 }
 
