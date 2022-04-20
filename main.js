@@ -17,19 +17,32 @@ navLinks.forEach((link) =>
 })
 
 /*Nav-desktop-紅球跟隨效果*/
-const navBar = document.querySelector('.main-nav .links')
-const dot = document.querySelector('.dot')
+const navBar = document.querySelector('.main-nav .links');
+const dot = document.querySelector('.dot');
+let dotReload = true;
 if (dot) { 
   navBar.addEventListener("mouseover", () =>{ dot.classList.add('moving');})
   navBar.addEventListener("mouseout", () =>{ dot.classList.remove('moving');})
   navLinks.forEach((link) =>{ 
     link.addEventListener("mouseover", () =>
     { 
+      dot.classList.remove('with-position');
       dot.classList.add('moving');
       dot.style.setProperty('--move', link.offsetLeft - dot.offsetLeft + 'px');
     });
   })
   
+}
+/*--進頁面後判斷*/
+if (dotReload) { 
+  navLinks.forEach((link) =>{ 
+    if (link.classList.contains('active')) {
+      dot.style.setProperty('--move', link.offsetLeft - dot.offsetLeft + 'px');
+      dot.classList.add('moving');
+      dot.classList.add('with-position');
+    } 
+  })
+  dotReload = false;
 }
 
 /*Back to Previous Page 返回上一頁*/

@@ -311,8 +311,8 @@ header.main .main-nav .link.link {
     z-index: -1;
     -webkit-transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
     transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
-    -webkit-animation: mask 5s linear infinite;
-            animation: mask 5s linear infinite;
+    -webkit-animation: mask 5s linear infinite,show 1s linear forwards;
+            animation: mask 5s linear infinite,show 1s linear forwards;
   }
   .dot.moving {
     width: 100px;
@@ -321,6 +321,10 @@ header.main .main-nav .link.link {
             transform: translate(var(--move), -10px);
     -webkit-transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .dot.with-position {
+    -webkit-transition: all 0s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
 
@@ -1456,6 +1460,24 @@ header.main .main-nav .link.link {
   }
   to {
     border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=style.css.map */
