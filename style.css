@@ -388,7 +388,6 @@ header.main .main-nav .link.link {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  white-space: pre-wrap;
   overflow-wrap: break-word;
 }
 
@@ -398,11 +397,26 @@ header.main .main-nav .link.link {
 
 .ckeditor img {
   width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
 .ckeditor iframe {
   max-width: 100%;
+}
+
+.ckeditor table {
+  width: 100% !important;
+  border-collapse: collapse;
+}
+
+.ckeditor table th, .ckeditor table td {
+  border: 2px solid;
+}
+
+.ckeditor ol, .ckeditor ul {
+  list-style-type: disc;
+  list-style-position: inside;
 }
 
 /*--【ckeditor】*/

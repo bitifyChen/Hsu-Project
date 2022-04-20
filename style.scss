@@ -297,17 +297,28 @@ header.main {
   line-height: 24px;
   display: flex;
   flex-direction: column;
-  white-space: pre-wrap;
   overflow-wrap: break-word;
   p {
     width: 100%;
   }
   img {
     width: 100%;
+    max-width: 100%;
     height: auto;
   }
   iframe {
     max-width: 100%;
+  }
+  table{
+    width: 100% !important;
+    border-collapse: collapse;
+    th, td {
+      border: 2px solid;
+    }
+  }
+  ol,ul{
+    list-style-type: disc;
+    list-style-position: inside;
   }
 }
 /*--【ckeditor】*/
