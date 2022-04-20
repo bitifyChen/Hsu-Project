@@ -5,6 +5,7 @@ const navLinks = document.querySelectorAll('.main-nav .link')
 btnMenu.addEventListener('click', menuOpen)
 function menuOpen(){
   menu.classList.toggle('active')
+  document.querySelector('body').classList.toggle('lock-scroll')
 }
 /*--點擊link後，清除active效果，防止返回時看到*/
 navLinks.forEach((link) =>
