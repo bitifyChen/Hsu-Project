@@ -672,8 +672,10 @@ header.main {
         }
         .about-expertises {
           width: auto;
-          margin-left: -9vw;
-          margin-bottom: 4vw;
+          margin-left: 10px;
+          position: absolute;
+          bottom: 9vw;
+          left:calc(8vw + 10px);
           .expertises {
             background-color: white;
             padding: 5px 10px;
@@ -1064,6 +1066,7 @@ header.main {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
+      align-content: flex-start;
       .tags {
         width: 100%;
       }

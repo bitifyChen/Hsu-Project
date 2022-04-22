@@ -854,8 +854,10 @@ header.main .main-nav .link.link {
   }
   .section-index .about .about-info .about-expertises {
     width: auto;
-    margin-left: -9vw;
-    margin-bottom: 4vw;
+    margin-left: 10px;
+    position: absolute;
+    bottom: 9vw;
+    left: calc(8vw + 10px);
   }
   .section-index .about .about-info .about-expertises .expertises {
     background-color: white;
@@ -1311,6 +1313,8 @@ header.main .main-nav .link.link {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
   }
   .section-team-member-detail .content .tags {
     width: 100%;
