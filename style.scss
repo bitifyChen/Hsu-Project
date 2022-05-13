@@ -33,10 +33,10 @@ html {
 button.read-more {
   cursor: pointer;
   padding: 5px 10px;
-  border: 2px solid var(--fontSubDarkMode);
-  color: var(--fontSubDarkMode);
+  border: 2px solid white;
+  color: white;
   background-color: transparent;
-  font-weight: 900;
+  font-weight: 700;
   &:hover {
     background-color: rgba(255, 255, 255, 0.4);
     color: white;
@@ -220,10 +220,18 @@ header.main {
         flex-direction: row;
       }
       .link {
-        margin-left: 20px;
+        margin-left: 40px;
         padding: 25px 0px;
+        a{
+          font-size: 2rem;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
         span {
-          margin-left: 5px;
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+          display: block;
         }
       }
     }
@@ -271,7 +279,6 @@ header.main {
 .txt-group {
   padding: 10px 0px;
   .txt-title h3 {
-    font-weight: 700;
     color: var(--fontDarkMode);
     border-left: 5px solid var(--mainColor);
     padding-left: 10px;
@@ -288,9 +295,11 @@ header.main {
         color: var(--fontSuDarkMode);
         margin-bottom: 5px;
         font-size: 14px;
+        line-height: 16px;
       }
       .en {
         font-size: 12px;
+        line-height: 14px;
       }
     }
   }
@@ -348,6 +357,9 @@ header.main {
       display: inline-block;
       margin-bottom: 20px;
     }
+    .title span {
+      padding-left: 1rem;
+    }
     .title::after {
       content: "";
       position: absolute;
@@ -377,13 +389,15 @@ header.main {
       padding: 10px 20px;
       background-color: black;
       position: relative;
+      font-weight: 500;
       .tag-name {
         color: white;
-        font-weight: 500;
+        font-size: 16px;
+        padding-bottom: 5px;
       }
       .tag-sub-name {
         color: var(--fontSubDarkMode);
-        font-weight: 300;
+        font-size: 14px;
       }
       &::before {
         content: "";
@@ -672,7 +686,7 @@ header.main {
         }
         .about-expertises {
           width: auto;
-          margin-left: 10px;
+          margin-left: 40px;
           position: absolute;
           bottom: 9vw;
           left:calc(8vw + 10px);
@@ -708,6 +722,7 @@ header.main {
             font-size: 3rem;
           }
           .sub {
+            color: white;
             font-size: 1.8rem;
           }
         }
@@ -730,11 +745,13 @@ header.main {
   .title span {
     color: var(--fontDarkMode);
     font-size: 3rem;
-    font-weight: 900;
   }
   .title h2 {
     display: inline-block;
     position: relative;
+  }
+  .title span{
+    padding-left: 1rem;
   }
   .title h2::after {
     content: "";
@@ -767,7 +784,6 @@ header.main {
     .name-title h3 {
       font-size: 2.6rem;
       color: white;
-      font-weight: 900;
       span {
         font-size: 2.6rem;
         padding-left: 0.5em;
@@ -776,7 +792,10 @@ header.main {
     .name-job p {
       color: var(--fontDarkMode);
       font-size: 1.6rem;
-      font-weight: 900;
+      line-height: 1.8rem;
+      &.tw{
+        margin-bottom: 5px;
+      }
     }
   }
 }
@@ -930,10 +949,12 @@ header.main {
         p.name {
           color: var(--fontDarkMode);
           font-size: 1.6rem;
+          padding-bottom: 5px;
         }
         p.sub-name {
           color: var(--fontSubDarkMode);
           font-size: 1.2rem;
+          line-height: 1.4rem;
         }
       }
       &:hover {
@@ -1131,12 +1152,14 @@ header.main {
       position: relative;
       cursor: pointer;
       .paper-title p {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+        padding-bottom: 5px;
         color: var(--fontDarkMode);
       }
       .paper-remark p {
         font-size: 1rem;
-        font-weight: 300;
+        line-height: 1.4rem;
         color: var(--fontSubDarkMode);
       }
       &:hover {
@@ -1158,17 +1181,18 @@ header.main {
       .paper {
         padding: 20px 0px;
         padding-left: 10px;
-        min-height: 100px;
+        min-height: 80px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         .paper-title p {
-          font-size: 2rem;
+          font-size: 1.8rem;
+          line-height: 2rem;
           color: var(--fontDarkMode);
         }
         .paper-remark p {
           font-size: 1.4rem;
-          font-weight: 500;
+          line-height: 1.6rem;
           color: var(--fontSubDarkMode);
         }
         &::before {

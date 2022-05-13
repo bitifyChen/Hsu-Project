@@ -41,10 +41,10 @@ html li {
 button.read-more {
   cursor: pointer;
   padding: 5px 10px;
-  border: 2px solid var(--fontSubDarkMode);
-  color: var(--fontSubDarkMode);
+  border: 2px solid white;
+  color: white;
   background-color: transparent;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 button.read-more:hover {
@@ -289,11 +289,26 @@ header.main .main-nav .link.link {
             flex-direction: row;
   }
   header.main .main-nav .link {
-    margin-left: 20px;
+    margin-left: 40px;
     padding: 25px 0px;
   }
+  header.main .main-nav .link a {
+    font-size: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   header.main .main-nav .link span {
-    margin-left: 5px;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    display: block;
   }
 }
 
@@ -355,7 +370,6 @@ header.main .main-nav .link.link {
 }
 
 .txt-group .txt-title h3 {
-  font-weight: 700;
   color: var(--fontDarkMode);
   border-left: 5px solid var(--mainColor);
   padding-left: 10px;
@@ -377,10 +391,12 @@ header.main .main-nav .link.link {
   color: var(--fontSuDarkMode);
   margin-bottom: 5px;
   font-size: 14px;
+  line-height: 16px;
 }
 
 .txt-group .txt-contents .txt-content .en {
   font-size: 12px;
+  line-height: 14px;
 }
 
 /*【共用組件】*/
@@ -452,6 +468,10 @@ header.main .main-nav .link.link {
   margin-bottom: 20px;
 }
 
+.section-side .side .title span {
+  padding-left: 1rem;
+}
+
 .section-side .side .title::after {
   content: "";
   position: absolute;
@@ -487,16 +507,18 @@ header.main .main-nav .link.link {
   padding: 10px 20px;
   background-color: black;
   position: relative;
+  font-weight: 500;
 }
 
 .section-side .tags .tag .tag-name {
   color: white;
-  font-weight: 500;
+  font-size: 16px;
+  padding-bottom: 5px;
 }
 
 .section-side .tags .tag .tag-sub-name {
   color: var(--fontSubDarkMode);
-  font-weight: 300;
+  font-size: 14px;
 }
 
 .section-side .tags .tag::before {
@@ -854,7 +876,7 @@ header.main .main-nav .link.link {
   }
   .section-index .about .about-info .about-expertises {
     width: auto;
-    margin-left: 10px;
+    margin-left: 40px;
     position: absolute;
     bottom: 9vw;
     left: calc(8vw + 10px);
@@ -891,6 +913,7 @@ header.main .main-nav .link.link {
     font-size: 3rem;
   }
   .section-index .news .news-info .news-title .sub {
+    color: white;
     font-size: 1.8rem;
   }
   .section-index .news .news-info .btns {
@@ -913,12 +936,15 @@ header.main .main-nav .link.link {
 .section-about .title span {
   color: var(--fontDarkMode);
   font-size: 3rem;
-  font-weight: 900;
 }
 
 .section-about .title h2 {
   display: inline-block;
   position: relative;
+}
+
+.section-about .title span {
+  padding-left: 1rem;
 }
 
 .section-about .title h2::after {
@@ -958,7 +984,6 @@ header.main .main-nav .link.link {
 .section-about .name-group .name-title h3 {
   font-size: 2.6rem;
   color: white;
-  font-weight: 900;
 }
 
 .section-about .name-group .name-title h3 span {
@@ -969,7 +994,11 @@ header.main .main-nav .link.link {
 .section-about .name-group .name-job p {
   color: var(--fontDarkMode);
   font-size: 1.6rem;
-  font-weight: 900;
+  line-height: 1.8rem;
+}
+
+.section-about .name-group .name-job p.tw {
+  margin-bottom: 5px;
 }
 
 @media (min-width: 900px) {
@@ -1153,11 +1182,13 @@ header.main .main-nav .link.link {
 .section-team-member .members .member .member-info p.name {
   color: var(--fontDarkMode);
   font-size: 1.6rem;
+  padding-bottom: 5px;
 }
 
 .section-team-member .members .member .member-info p.sub-name {
   color: var(--fontSubDarkMode);
   font-size: 1.2rem;
+  line-height: 1.4rem;
 }
 
 .section-team-member .members .member:hover .member-pic img {
@@ -1383,13 +1414,15 @@ header.main .main-nav .link.link {
 }
 
 .section-publications .papers .paper .paper-title p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  padding-bottom: 5px;
   color: var(--fontDarkMode);
 }
 
 .section-publications .papers .paper .paper-remark p {
   font-size: 1rem;
-  font-weight: 300;
+  line-height: 1.4rem;
   color: var(--fontSubDarkMode);
 }
 
@@ -1405,7 +1438,7 @@ header.main .main-nav .link.link {
   .section-publications .papers .paper {
     padding: 20px 0px;
     padding-left: 10px;
-    min-height: 100px;
+    min-height: 80px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1418,12 +1451,13 @@ header.main .main-nav .link.link {
             justify-content: center;
   }
   .section-publications .papers .paper .paper-title p {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 2rem;
     color: var(--fontDarkMode);
   }
   .section-publications .papers .paper .paper-remark p {
     font-size: 1.4rem;
-    font-weight: 500;
+    line-height: 1.6rem;
     color: var(--fontSubDarkMode);
   }
   .section-publications .papers .paper::before {
