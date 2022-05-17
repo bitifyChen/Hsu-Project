@@ -219,7 +219,6 @@ header.main .main-nav .link {
 header.main .main-nav .link span {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  margin-left: 0.5em;
 }
 
 header.main .main-nav .link.link {
@@ -246,6 +245,9 @@ header.main .main-nav .link.link {
         -ms-flex-align: center;
             align-items: center;
     height: 100%;
+  }
+  header.main.active .main-nav .link span {
+    margin-left: 0.5em;
   }
 }
 
@@ -1289,6 +1291,7 @@ header.main .main-nav .link.link {
 
 .section-team-member-detail .member-introduce .member-about .about-content {
   padding: 10px;
+  line-height: 1.8rem;
   color: var(--fontSubDarkMode);
 }
 
@@ -1318,11 +1321,12 @@ header.main .main-nav .link.link {
 .section-team-member-detail .member-papers .paper .paper-title p {
   font-size: 1.4rem;
   color: var(--fontDarkMode);
+  padding-bottom: 5px;
 }
 
 .section-team-member-detail .member-papers .paper .paper-remark p {
   font-size: 1rem;
-  font-weight: 300;
+  line-height: 1.4rem;
   color: var(--fontSubDarkMode);
 }
 

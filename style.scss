@@ -179,7 +179,6 @@ header.main {
       span {
         font-family: "Roboto", sans-serif;
         font-weight: 500;
-        margin-left: 0.5em;
       }
       &.link {
         position: relative;
@@ -197,6 +196,9 @@ header.main {
         justify-content: center;
         align-items: center;
         height: 100%;
+        .link span {
+          margin-left: 0.5em;
+        }
       }
     }
   }
@@ -1036,6 +1038,7 @@ header.main {
       }
       .about-content {
         padding: 10px;
+        line-height: 1.8rem;
         color: var(--fontSubDarkMode);
       }
     }
@@ -1062,10 +1065,11 @@ header.main {
       .paper-title p {
         font-size: 1.4rem;
         color: var(--fontDarkMode);
+        padding-bottom: 5px;
       }
       .paper-remark p {
         font-size: 1rem;
-        font-weight: 300;
+        line-height: 1.4rem;
         color: var(--fontSubDarkMode);
       }
       &:hover {
