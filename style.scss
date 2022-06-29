@@ -911,7 +911,6 @@ header.main {
   .member-list {
     margin: 10px 0px;
     .title h3 {
-      font-weight: 900;
       color: var(--fontDarkMode);
     }
   }
@@ -931,7 +930,7 @@ header.main {
       .member-pic {
         img {
           width: 100%;
-          aspect-ratio: 4/5;
+          aspect-ratio: 4/6;
           object-fit: cover;
           vertical-align: middle;
           @extend %sbs;
@@ -1015,6 +1014,7 @@ header.main {
           display: block;
           font-size: 2rem;
           font-weight: 300;
+          word-break: normal;
         }
       }
       .member-job {

@@ -1122,7 +1122,6 @@ header.main .main-nav .link.link {
 }
 
 .section-team-member .member-list .title h3 {
-  font-weight: 900;
   color: var(--fontDarkMode);
 }
 
@@ -1152,7 +1151,7 @@ header.main .main-nav .link.link {
 
 .section-team-member .members .member .member-pic img {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/6;
   -o-object-fit: cover;
      object-fit: cover;
   vertical-align: middle;
@@ -1264,6 +1263,7 @@ header.main .main-nav .link.link {
   display: block;
   font-size: 2rem;
   font-weight: 300;
+  word-break: normal;
 }
 
 .section-team-member-detail .member-introduce .member-info .member-job {
