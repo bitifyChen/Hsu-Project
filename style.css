@@ -418,6 +418,7 @@ header.main .main-nav .link.link {
 
 .ckeditor * {
   line-height: 1.6em;
+  font-size: inherit;
 }
 
 .ckeditor p {
@@ -425,9 +426,10 @@ header.main .main-nav .link.link {
 }
 
 .ckeditor img {
-  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   max-width: 100%;
-  height: auto;
+  height: auto !important;
 }
 
 .ckeditor iframe {
